@@ -18,6 +18,8 @@ The purpose of this library is to provide a simple API for creating, interacting
 
 ### Main function
 There is no need for a WinMain function, a simple main function in c/c++ will do.
+
+### Window Creation and Use
 Window creation is simplified as shown:
 '''c
 RWIN *WIN = RWL_CreateWindow(HD768, "My Title"); // create window with standard hd resolution and title
