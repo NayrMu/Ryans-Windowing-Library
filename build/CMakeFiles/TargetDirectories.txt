@@ -1,0 +1,5 @@
+C:/Users/rkmun/source/repos/WinWrap/build/CMakeFiles/edit_cache.dir
+C:/Users/rkmun/source/repos/WinWrap/build/CMakeFiles/rebuild_cache.dir
+C:/Users/rkmun/source/repos/WinWrap/build/src/CMakeFiles/WinWrap.dir
+C:/Users/rkmun/source/repos/WinWrap/build/src/CMakeFiles/edit_cache.dir
+C:/Users/rkmun/source/repos/WinWrap/build/src/CMakeFiles/rebuild_cache.dir

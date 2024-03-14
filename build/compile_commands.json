@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/rkmun/source/repos/WinWrap/build/src",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe   -g -O0 -o CMakeFiles\\WinWrap.dir\\main.c.obj -c C:\\Users\\rkmun\\source\\repos\\WinWrap\\src\\main.c",
+  "file": "C:/Users/rkmun/source/repos/WinWrap/src/main.c",
+  "output": "src/CMakeFiles/WinWrap.dir/main.c.obj"
+}
+]
