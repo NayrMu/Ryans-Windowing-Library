@@ -21,6 +21,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) 
   return 0;
 }
 
+// Common resolutions to be given to RWL_CreateWindow function
 enum RESOLUTION {
   HD768,
   HD1080,
@@ -28,12 +29,14 @@ enum RESOLUTION {
   UHD4k,
 };
 
+// Struct that holds arg information for render function
 typedef struct {
   uint8_t NUM_ARGS;
   va_list CONTEXT;
 
 } RWL_Renderer;
 
+// Struct for all window information including actual window and window calss
 typedef struct {
   char TITLE[1];
   int16_t WIDTH;
@@ -51,24 +54,31 @@ typedef struct {
 
 } RWIN;
 
+// Main loop that happens every frame for window rendering
 void RWL_RenderLoop(RWIN *window) {
   // Process messages in the message queue
   MSG msg;
   while (GetMessage(&msg, NULL, 0, 0) > 0) {
     TranslateMessage(&msg);
     DispatchMessage(&msg);
+    // initiate user defined render function
     window->RENDER_FUNC(window->RENDERER.NUM_ARGS, window->RENDERER.CONTEXT);
   }
 }
 
+// set user defined function to the one being called in RWL_RenderLoop
 void set_RenderFunc(RWIN *window, UserRenderFunc renderFunc, uint8_t numArgs, ...) {
   window->RENDER_FUNC = renderFunc;
   window->RENDERER.NUM_ARGS = numArgs;
+
+  // variadic function stuffs for appying arguments to RENDERER.CONTEXT
   va_start(window->RENDERER.CONTEXT, numArgs);
   va_end(window->RENDERER.CONTEXT);
 }
 
+// Window creation for Windows OS systems
 HWND RWL_CreateWWindow(RWIN *window) {
+
   // Register window class and set window procedure
   WNDCLASSEX wc = { 0 };
   wc.lpfnWndProc = WindowProc;
@@ -85,7 +95,7 @@ HWND RWL_CreateWWindow(RWIN *window) {
   wc.hIconSm       = LoadIcon(NULL, IDI_APPLICATION);
   if(!RegisterClassEx(&wc))
   {
-    EXIT("WINDOW CLASS CREATION", NULL_AFTER_CREATION);
+    EXIT("WINDOW CLASS CREATION", NULL_AFTER_CREATION); // exit with error macro
   }
 
   // Create a window using WinAPI
@@ -94,15 +104,18 @@ HWND RWL_CreateWWindow(RWIN *window) {
                               NULL, NULL, GetModuleHandle(NULL), NULL);
   if(hwnd == NULL)
   {
-    EXIT("WINDOW CREATION", NULL_AFTER_CREATION);
+    EXIT("WINDOW CREATION", NULL_AFTER_CREATION); // exit with error macro
   }
   // Return the window handle
   return hwnd;
 }
 
+// Create RWL's window object
 RWIN* RWL_CreateWindow(enum RESOLUTION resolution, const char title[]) {
   RWIN *window = (RWIN*)malloc(sizeof(RWIN));
+  // increment global ID for window binding
   WND_CLASS_ID++;
+  // "bind" an ID to the window
   window->CLASS_ID = WND_CLASS_ID;
   sprintf(window->S_CLASS_ID, "%d", window->CLASS_ID);
   fb_init(&window->FRAME_BUFFER);
@@ -128,6 +141,8 @@ RWIN* RWL_CreateWindow(enum RESOLUTION resolution, const char title[]) {
   window->WIDTH = width;
   window->HEIGHT = height;
   window->WINDOW = RWL_CreateWWindow(window);
+
+  // Windows OS functions for showing the window
   ShowWindow(window->WINDOW, SW_SHOW);
   UpdateWindow(window->WINDOW);
 

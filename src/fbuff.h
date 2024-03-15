@@ -28,3 +28,20 @@ void fb_pushback(fbuff *fbuff, uint8_t item) {
   }
   fbuff->buffer[fbuff->end] = item; // add item
 }
+void fb_clear(fbuff *fbuff, uint8_t item) {
+  for (int i = 0; i < fbuff->size; i++) {
+    fbuff->buffer[i] = item;
+  }
+}
+void fb_reset(fbuff *fbuff) {
+  uint8_t *newBuff = (uint8_t*) calloc(1, sizeof(uint8_t));
+  free(fbuff->buffer);
+  fbuff->buffer = newBuff;
+  fbuff->size = 1;
+  fbuff->end = 0;
+}
+void fb_resize(fbuff *fbuff, uint64_t size) {
+  fbuff->buffer = (uint8_t*)realloc(fbuff->buffer, (size) * sizeof(uint8_t));
+  fbuff->size = size;
+  fbuff->end = size-1;
+}
