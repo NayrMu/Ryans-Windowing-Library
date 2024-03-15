@@ -21,11 +21,11 @@ There is no need for a WinMain function, a simple main function in c/c++ will do
 
 ### Window Creation and Use
 Window creation is simplified as shown:
-'''c
+```c
 RWIN *WIN = RWL_CreateWindow(HD768, "My Title"); // create window with standard hd resolution and title
 set_RenderFunc(WIN, render, 0); // attatch render callback
 RWL_RenderLoop(WIN); //main loop
-'''
+```
 With three simple steps you create the window, attatch a render function to the window, and then start the window's render loop. 
 - The window creation function takes two inputs, a standard resolution (HD768, HD1080, etc.) 
 and a title to go into the title bar of the window.
