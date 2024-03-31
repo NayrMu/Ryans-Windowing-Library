@@ -3,10 +3,8 @@
 
 /*
 * TODO:
-* - Figure out how to get a byte array into windowproc for copying image to window
-* - Is there another way to render to window?
-* - Null checks
-*
+* - Set up a copy to sytem to fame buffer function
+* - Seperate source and header
 *
 */
 
@@ -22,8 +20,6 @@ void render2(int numArgs, va_list args) {
 
 int main() {
   RWIN *WIN = RWL_CreateWindow(HD768, "My Title"); // create window with standard hd resolution and title
-
-  fbuff fbuff = WIN->FRAME_BUFFER;
 
   set_RenderFunc(WIN, render, 0); // attatch render callback
   RWL_RenderLoop(WIN); //main loop

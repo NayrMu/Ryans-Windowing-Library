@@ -26,6 +26,7 @@ src/CMakeFiles/WinWrap.dir/main.c.obj: \
  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/mm_malloc.h \
  C:\Users\rkmun\source\repos\WinWrap\src\rerror.h \
  C:\Users\rkmun\source\repos\WinWrap\src\fbuff.h \
+ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdbool.h \
  C:\Users\rkmun\source\repos\WinWrap\src\Platform.h \
  C:/msys64/ucrt64/include/windows.h C:/msys64/ucrt64/include/sdkddkver.h \
  C:/msys64/ucrt64/include/excpt.h \

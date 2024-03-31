@@ -95,7 +95,7 @@ HWND RWL_CreateWWindow(RWIN *window) {
   wc.hIconSm       = LoadIcon(NULL, IDI_APPLICATION);
   if(!RegisterClassEx(&wc))
   {
-    EXIT("WINDOW CLASS CREATION", NULL_AFTER_CREATION); // exit with error macro
+    EXIT("WNDCLASS CREATION", NULL_AFTER_CREATION); // exit with error macro
   }
 
   // Create a window using WinAPI
@@ -104,7 +104,7 @@ HWND RWL_CreateWWindow(RWIN *window) {
                               NULL, NULL, GetModuleHandle(NULL), NULL);
   if(hwnd == NULL)
   {
-    EXIT("WINDOW CREATION", NULL_AFTER_CREATION); // exit with error macro
+    EXIT("HWND CREATION", NULL_AFTER_CREATION); // exit with error macro
   }
   // Return the window handle
   return hwnd;
@@ -136,7 +136,7 @@ RWIN* RWL_CreateWindow(enum RESOLUTION resolution, const char title[]) {
     case 3:
     break;
     default:
-      printf("::WINDOW CREATION ERROR:: INVALID RESOLUTION");
+      EXIT("WINDOW CREATION RESOLUTION", INVALID_INPUT);
   }
   window->WIDTH = width;
   window->HEIGHT = height;
