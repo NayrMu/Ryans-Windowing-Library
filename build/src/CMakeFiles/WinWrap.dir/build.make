@@ -69,6 +69,7 @@ include src/CMakeFiles/WinWrap.dir/progress.make
 include src/CMakeFiles/WinWrap.dir/flags.make
 
 src/CMakeFiles/WinWrap.dir/main.c.obj: src/CMakeFiles/WinWrap.dir/flags.make
+src/CMakeFiles/WinWrap.dir/main.c.obj: src/CMakeFiles/WinWrap.dir/includes_C.rsp
 src/CMakeFiles/WinWrap.dir/main.c.obj: C:/Users/rkmun/source/repos/WinWrap/src/main.c
 src/CMakeFiles/WinWrap.dir/main.c.obj: src/CMakeFiles/WinWrap.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\rkmun\source\repos\WinWrap\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/CMakeFiles/WinWrap.dir/main.c.obj"
@@ -91,6 +92,8 @@ WinWrap_EXTERNAL_OBJECTS =
 
 src/WinWrap.exe: src/CMakeFiles/WinWrap.dir/main.c.obj
 src/WinWrap.exe: src/CMakeFiles/WinWrap.dir/build.make
+src/WinWrap.exe: src/WWinds/libwwinds.a
+src/WinWrap.exe: src/Fbuff/libfbuff.a
 src/WinWrap.exe: src/CMakeFiles/WinWrap.dir/linkLibs.rsp
 src/WinWrap.exe: src/CMakeFiles/WinWrap.dir/objects1.rsp
 src/WinWrap.exe: src/CMakeFiles/WinWrap.dir/link.txt

@@ -35,6 +35,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.27.7/CMakeRCCompiler.cmake"
   "CMakeFiles/3.27.7/CMakeSystem.cmake"
   "C:/Users/rkmun/source/repos/WinWrap/src/CMakeLists.txt"
+  "C:/Users/rkmun/source/repos/WinWrap/src/Fbuff/CMakeLists.txt"
+  "C:/Users/rkmun/source/repos/WinWrap/src/WWinds/CMakeLists.txt"
   )
 
 # The corresponding makefile is:
@@ -47,9 +49,13 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/WWinds/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/Fbuff/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "src/CMakeFiles/WinWrap.dir/DependInfo.cmake"
+  "src/WWinds/CMakeFiles/wwinds.dir/DependInfo.cmake"
+  "src/Fbuff/CMakeFiles/fbuff.dir/DependInfo.cmake"
   )

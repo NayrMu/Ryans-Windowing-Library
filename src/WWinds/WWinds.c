@@ -1,10 +1,19 @@
-#pragma once
 
-#include "includes.h"
-#include "stdarg.h"
+#include "WWinds.h"
 
-typedef void (*UserRenderFunc)(int numArgs, va_list args);
+/********************
+Nomenclature Guide
+
+helper-functions: start with hi_ for helper internal
+user-functions: rwl_ to signify they are specifically from this API
+internal facing functions: start with just i_ for internal
+
+
+*********************/
+
 uint16_t WND_CLASS_ID = 0;
+
+
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
   switch(uMsg)
@@ -21,38 +30,16 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) 
   return 0;
 }
 
-// Common resolutions to be given to RWL_CreateWindow function
-enum RESOLUTION {
-  HD768,
-  HD1080,
-  UHD2K,
-  UHD4k,
-};
-
-// Struct that holds arg information for render function
-typedef struct {
-  uint8_t NUM_ARGS;
-  va_list CONTEXT;
-
-} RWL_Renderer;
-
-// Struct for all window information including actual window and window calss
-typedef struct {
-  char TITLE[1];
-  int16_t WIDTH;
-  int16_t HEIGHT;
-
-  WNDCLASSEX WINDOW_CLASS;
-  uint16_t CLASS_ID;
-  char S_CLASS_ID[3];
-  HWND WINDOW;
-
-  fbuff FRAME_BUFFER;
-  
-  RWL_Renderer RENDERER;
-  UserRenderFunc RENDER_FUNC;
-
-} RWIN;
+void i_Init_Offscreen_Buffer(HWND hWnd, RWIN* window) {
+    HDC hdc = GetDC(hWnd);
+    window->offscreenDC = CreateCompatibleDC(hdc);
+    window->offscreenBitmap = CreateCompatibleBitmap(hdc, window->WIDTH, window->HEIGHT);
+    SelectObject(window->offscreenDC, window->offscreenBitmap);
+    ReleaseDC(hWnd, hdc);
+}
+void i_Update_Window(HDC windowDC, RWIN* window) {
+    BitBlt(windowDC, 0, 0, window->WIDTH, window->HEIGHT, window->offscreenDC, 0, 0, SRCCOPY);
+}
 
 // Main loop that happens every frame for window rendering
 void RWL_RenderLoop(RWIN *window) {
@@ -63,11 +50,22 @@ void RWL_RenderLoop(RWIN *window) {
     DispatchMessage(&msg);
     // initiate user defined render function
     window->RENDER_FUNC(window->RENDERER.NUM_ARGS, window->RENDERER.CONTEXT);
+
+    
+    i_Update_Window(GetDC(GetActiveWindow()), window);
   }
+}
+void RWL_Draw_Rect(RWIN* window, uint16_t x, uint16_t y, uint16_t width, uint16_t height, COLORREF color) {
+  RECT rect;
+  SetRect(&rect, x, y, x+width, y+height);
+  HBRUSH hBrush = CreateSolidBrush(color);
+  SelectObject(window->offscreenDC, hBrush);
+  FillRect(window->offscreenDC, &rect, hBrush);
+  DeleteObject(hBrush);
 }
 
 // set user defined function to the one being called in RWL_RenderLoop
-void set_RenderFunc(RWIN *window, UserRenderFunc renderFunc, uint8_t numArgs, ...) {
+void RWL_Set_RenderFunc(RWIN *window, UserRenderFunc renderFunc, uint8_t numArgs, ...) {
   window->RENDER_FUNC = renderFunc;
   window->RENDERER.NUM_ARGS = numArgs;
 
@@ -120,24 +118,9 @@ RWIN* RWL_CreateWindow(enum RESOLUTION resolution, const char title[]) {
   sprintf(window->S_CLASS_ID, "%d", window->CLASS_ID);
   fb_init(&window->FRAME_BUFFER);
   strcpy(window->TITLE, title);
-  int width;
-  int height;
-  switch (resolution) {
-    case 0:
-      width = 1366;
-      height = 768;
-      break;
-    case 1:
-      width = 1920;
-      height = 1080;
-      break;
-    case 2:
-      break;
-    case 3:
-    break;
-    default:
-      EXIT("WINDOW CREATION RESOLUTION", INVALID_INPUT);
-  }
+  int width = hi_create_width(resolution);
+  int height = hi_create_height(resolution);
+  
   window->WIDTH = width;
   window->HEIGHT = height;
   window->WINDOW = RWL_CreateWWindow(window);
@@ -146,6 +129,43 @@ RWIN* RWL_CreateWindow(enum RESOLUTION resolution, const char title[]) {
   ShowWindow(window->WINDOW, SW_SHOW);
   UpdateWindow(window->WINDOW);
 
+  i_Init_Offscreen_Buffer(GetActiveWindow(), window);
+
   return window;
+}
+
+int hi_create_width(enum RESOLUTION resolution) {
+  switch (resolution) {
+    case 0:
+      return 1366;
+      break;
+    case 1:
+      return 1920;
+      break;
+    case 2:
+      break;
+    case 3:
+    break;
+    default:
+      EXIT("WINDOW CREATION RESOLUTION", INVALID_INPUT);
+  }
+}
+
+int hi_create_height(enum RESOLUTION resolution) {
+  switch (resolution) {
+    case 0:
+      return 768;
+      break;
+    case 1:
+      return 1080;
+      break;
+    case 2:
+      break;
+    case 3:
+    break;
+    default:
+      EXIT("WINDOW CREATION RESOLUTION", INVALID_INPUT);
+  }
+
 }
 

@@ -1,4 +1,5 @@
-#include "includes.h"
+#include "WWinds.h"
+#include "Platform.h"
 
 
 /*
@@ -10,6 +11,8 @@
 
 
 void render(int numArgs, va_list args) {
+  COLORREF color = RGB(200, 30, 20);
+  RWL_Draw_Rect(va_arg(args, RWIN*), 0, 0, 100, 100, color);
   printf("rendered\n");
 }
 void render2(int numArgs, va_list args) {
@@ -21,11 +24,11 @@ void render2(int numArgs, va_list args) {
 int main() {
   RWIN *WIN = RWL_CreateWindow(HD768, "My Title"); // create window with standard hd resolution and title
 
-  set_RenderFunc(WIN, render, 0); // attatch render callback
+  RWL_Set_RenderFunc(WIN, render, 1, WIN); // attatch render callback
   RWL_RenderLoop(WIN); //main loop
 
   RWIN *WIN2 = RWL_CreateWindow(HD768, "\0");
-  set_RenderFunc(WIN2, render2, 2, 13, 3);
+  RWL_Set_RenderFunc(WIN2, render2, 2, 13, 3);
   RWL_RenderLoop(WIN2);
   free(WIN);
   free(WIN2);

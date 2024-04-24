@@ -3,10 +3,10 @@ add_executable(WinWrap
     "main.c"
 )
 
-# target_include_directories(WinWrap PRIVATE "GMath" "Voxel" "Shader")
-
-# Link against GLFW
-# target_link_libraries(WinWrap PRIVATE glfw3)
+add_subdirectory("WWinds")
+add_subdirectory("Fbuff")
+target_link_libraries(WinWrap wwinds)
+target_link_libraries(WinWrap fbuff)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET WinWrap PROPERTY CXX_STANDARD 20)

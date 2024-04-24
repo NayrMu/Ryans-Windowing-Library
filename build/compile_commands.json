@@ -1,8 +1,20 @@
 [
 {
   "directory": "C:/Users/rkmun/source/repos/WinWrap/build/src",
-  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe   -g -O0 -o CMakeFiles\\WinWrap.dir\\main.c.obj -c C:\\Users\\rkmun\\source\\repos\\WinWrap\\src\\main.c",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe  @CMakeFiles/WinWrap.dir/includes_C.rsp -g -O0 -o CMakeFiles\\WinWrap.dir\\main.c.obj -c C:\\Users\\rkmun\\source\\repos\\WinWrap\\src\\main.c",
   "file": "C:/Users/rkmun/source/repos/WinWrap/src/main.c",
   "output": "src/CMakeFiles/WinWrap.dir/main.c.obj"
+},
+{
+  "directory": "C:/Users/rkmun/source/repos/WinWrap/build/src/WWinds",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe  @CMakeFiles/wwinds.dir/includes_C.rsp -g -o CMakeFiles\\wwinds.dir\\WWinds.c.obj -c C:\\Users\\rkmun\\source\\repos\\WinWrap\\src\\WWinds\\WWinds.c",
+  "file": "C:/Users/rkmun/source/repos/WinWrap/src/WWinds/WWinds.c",
+  "output": "src/WWinds/CMakeFiles/wwinds.dir/WWinds.c.obj"
+},
+{
+  "directory": "C:/Users/rkmun/source/repos/WinWrap/build/src/Fbuff",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe  @CMakeFiles/fbuff.dir/includes_C.rsp -g -o CMakeFiles\\fbuff.dir\\fbuff.c.obj -c C:\\Users\\rkmun\\source\\repos\\WinWrap\\src\\Fbuff\\fbuff.c",
+  "file": "C:/Users/rkmun/source/repos/WinWrap/src/Fbuff/fbuff.c",
+  "output": "src/Fbuff/CMakeFiles/fbuff.dir/fbuff.c.obj"
 }
 ]

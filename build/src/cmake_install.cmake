@@ -37,3 +37,10 @@ if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "C:/msys64/ucrt64/bin/objdump.exe")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for each subdirectory.
+  include("C:/Users/rkmun/source/repos/WinWrap/build/src/WWinds/cmake_install.cmake")
+  include("C:/Users/rkmun/source/repos/WinWrap/build/src/Fbuff/cmake_install.cmake")
+
+endif()
+

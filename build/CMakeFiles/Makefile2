@@ -78,21 +78,57 @@ clean: src/clean
 
 # Recursive "all" directory target.
 src/all: src/CMakeFiles/WinWrap.dir/all
+src/all: src/WWinds/all
+src/all: src/Fbuff/all
 .PHONY : src/all
 
 # Recursive "preinstall" directory target.
-src/preinstall:
+src/preinstall: src/WWinds/preinstall
+src/preinstall: src/Fbuff/preinstall
 .PHONY : src/preinstall
 
 # Recursive "clean" directory target.
 src/clean: src/CMakeFiles/WinWrap.dir/clean
+src/clean: src/WWinds/clean
+src/clean: src/Fbuff/clean
 .PHONY : src/clean
+
+#=============================================================================
+# Directory level rules for directory src/Fbuff
+
+# Recursive "all" directory target.
+src/Fbuff/all: src/Fbuff/CMakeFiles/fbuff.dir/all
+.PHONY : src/Fbuff/all
+
+# Recursive "preinstall" directory target.
+src/Fbuff/preinstall:
+.PHONY : src/Fbuff/preinstall
+
+# Recursive "clean" directory target.
+src/Fbuff/clean: src/Fbuff/CMakeFiles/fbuff.dir/clean
+.PHONY : src/Fbuff/clean
+
+#=============================================================================
+# Directory level rules for directory src/WWinds
+
+# Recursive "all" directory target.
+src/WWinds/all: src/WWinds/CMakeFiles/wwinds.dir/all
+.PHONY : src/WWinds/all
+
+# Recursive "preinstall" directory target.
+src/WWinds/preinstall:
+.PHONY : src/WWinds/preinstall
+
+# Recursive "clean" directory target.
+src/WWinds/clean: src/WWinds/CMakeFiles/wwinds.dir/clean
+.PHONY : src/WWinds/clean
 
 #=============================================================================
 # Target rules for target src/CMakeFiles/WinWrap.dir
 
 # All Build rule for target.
-src/CMakeFiles/WinWrap.dir/all:
+src/CMakeFiles/WinWrap.dir/all: src/WWinds/CMakeFiles/wwinds.dir/all
+src/CMakeFiles/WinWrap.dir/all: src/Fbuff/CMakeFiles/fbuff.dir/all
 	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\WinWrap.dir\build.make src/CMakeFiles/WinWrap.dir/depend
 	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\WinWrap.dir\build.make src/CMakeFiles/WinWrap.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\rkmun\source\repos\WinWrap\build\CMakeFiles --progress-num=1,2 "Built target WinWrap"
@@ -100,7 +136,7 @@ src/CMakeFiles/WinWrap.dir/all:
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/WinWrap.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rkmun\source\repos\WinWrap\build\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rkmun\source\repos\WinWrap\build\CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/CMakeFiles/WinWrap.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rkmun\source\repos\WinWrap\build\CMakeFiles 0
 .PHONY : src/CMakeFiles/WinWrap.dir/rule
@@ -113,6 +149,58 @@ WinWrap: src/CMakeFiles/WinWrap.dir/rule
 src/CMakeFiles/WinWrap.dir/clean:
 	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\WinWrap.dir\build.make src/CMakeFiles/WinWrap.dir/clean
 .PHONY : src/CMakeFiles/WinWrap.dir/clean
+
+#=============================================================================
+# Target rules for target src/WWinds/CMakeFiles/wwinds.dir
+
+# All Build rule for target.
+src/WWinds/CMakeFiles/wwinds.dir/all:
+	$(MAKE) $(MAKESILENT) -f src\WWinds\CMakeFiles\wwinds.dir\build.make src/WWinds/CMakeFiles/wwinds.dir/depend
+	$(MAKE) $(MAKESILENT) -f src\WWinds\CMakeFiles\wwinds.dir\build.make src/WWinds/CMakeFiles/wwinds.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\rkmun\source\repos\WinWrap\build\CMakeFiles --progress-num=5,6 "Built target wwinds"
+.PHONY : src/WWinds/CMakeFiles/wwinds.dir/all
+
+# Build rule for subdir invocation for target.
+src/WWinds/CMakeFiles/wwinds.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rkmun\source\repos\WinWrap\build\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/WWinds/CMakeFiles/wwinds.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rkmun\source\repos\WinWrap\build\CMakeFiles 0
+.PHONY : src/WWinds/CMakeFiles/wwinds.dir/rule
+
+# Convenience name for target.
+wwinds: src/WWinds/CMakeFiles/wwinds.dir/rule
+.PHONY : wwinds
+
+# clean rule for target.
+src/WWinds/CMakeFiles/wwinds.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src\WWinds\CMakeFiles\wwinds.dir\build.make src/WWinds/CMakeFiles/wwinds.dir/clean
+.PHONY : src/WWinds/CMakeFiles/wwinds.dir/clean
+
+#=============================================================================
+# Target rules for target src/Fbuff/CMakeFiles/fbuff.dir
+
+# All Build rule for target.
+src/Fbuff/CMakeFiles/fbuff.dir/all:
+	$(MAKE) $(MAKESILENT) -f src\Fbuff\CMakeFiles\fbuff.dir\build.make src/Fbuff/CMakeFiles/fbuff.dir/depend
+	$(MAKE) $(MAKESILENT) -f src\Fbuff\CMakeFiles\fbuff.dir\build.make src/Fbuff/CMakeFiles/fbuff.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\rkmun\source\repos\WinWrap\build\CMakeFiles --progress-num=3,4 "Built target fbuff"
+.PHONY : src/Fbuff/CMakeFiles/fbuff.dir/all
+
+# Build rule for subdir invocation for target.
+src/Fbuff/CMakeFiles/fbuff.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rkmun\source\repos\WinWrap\build\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Fbuff/CMakeFiles/fbuff.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rkmun\source\repos\WinWrap\build\CMakeFiles 0
+.PHONY : src/Fbuff/CMakeFiles/fbuff.dir/rule
+
+# Convenience name for target.
+fbuff: src/Fbuff/CMakeFiles/fbuff.dir/rule
+.PHONY : fbuff
+
+# clean rule for target.
+src/Fbuff/CMakeFiles/fbuff.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src\Fbuff\CMakeFiles\fbuff.dir\build.make src/Fbuff/CMakeFiles/fbuff.dir/clean
+.PHONY : src/Fbuff/CMakeFiles/fbuff.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

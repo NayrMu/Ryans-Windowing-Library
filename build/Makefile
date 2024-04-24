@@ -128,6 +128,32 @@ WinWrap/fast:
 	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\WinWrap.dir\build.make src/CMakeFiles/WinWrap.dir/build
 .PHONY : WinWrap/fast
 
+#=============================================================================
+# Target rules for targets named wwinds
+
+# Build rule for target.
+wwinds: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 wwinds
+.PHONY : wwinds
+
+# fast build rule for target.
+wwinds/fast:
+	$(MAKE) $(MAKESILENT) -f src\WWinds\CMakeFiles\wwinds.dir\build.make src/WWinds/CMakeFiles/wwinds.dir/build
+.PHONY : wwinds/fast
+
+#=============================================================================
+# Target rules for targets named fbuff
+
+# Build rule for target.
+fbuff: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 fbuff
+.PHONY : fbuff
+
+# fast build rule for target.
+fbuff/fast:
+	$(MAKE) $(MAKESILENT) -f src\Fbuff\CMakeFiles\fbuff.dir\build.make src/Fbuff/CMakeFiles/fbuff.dir/build
+.PHONY : fbuff/fast
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -137,6 +163,8 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... WinWrap
+	@echo ... fbuff
+	@echo ... wwinds
 .PHONY : help
 
 

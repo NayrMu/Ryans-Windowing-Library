@@ -3,3 +3,9 @@ C:/Users/rkmun/source/repos/WinWrap/build/CMakeFiles/rebuild_cache.dir
 C:/Users/rkmun/source/repos/WinWrap/build/src/CMakeFiles/WinWrap.dir
 C:/Users/rkmun/source/repos/WinWrap/build/src/CMakeFiles/edit_cache.dir
 C:/Users/rkmun/source/repos/WinWrap/build/src/CMakeFiles/rebuild_cache.dir
+C:/Users/rkmun/source/repos/WinWrap/build/src/WWinds/CMakeFiles/wwinds.dir
+C:/Users/rkmun/source/repos/WinWrap/build/src/WWinds/CMakeFiles/edit_cache.dir
+C:/Users/rkmun/source/repos/WinWrap/build/src/WWinds/CMakeFiles/rebuild_cache.dir
+C:/Users/rkmun/source/repos/WinWrap/build/src/Fbuff/CMakeFiles/fbuff.dir
+C:/Users/rkmun/source/repos/WinWrap/build/src/Fbuff/CMakeFiles/edit_cache.dir
+C:/Users/rkmun/source/repos/WinWrap/build/src/Fbuff/CMakeFiles/rebuild_cache.dir

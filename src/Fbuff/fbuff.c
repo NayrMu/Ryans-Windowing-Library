@@ -1,15 +1,5 @@
-#pragma once
 
-#include "rerror.h"
-#include "stdint.h"
-#include "stdlib.h"
-#include "stdbool.h"
-
-typedef struct {
-  uint8_t *buffer;
-  uint64_t size;
-  uint64_t end;
-} fbuff;
+#include "fbuff.h"
 
 void fb_init(fbuff* fbuff) {
   if (fbuff == NULL) {

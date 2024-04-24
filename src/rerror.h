@@ -1,4 +1,5 @@
 #pragma once
+#include "stdio.h"
 
 #define EXIT(location, code) \
         printf("::%s ERROR:: CODE: %d\n", location, code); \
