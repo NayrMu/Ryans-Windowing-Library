@@ -55,14 +55,6 @@ void RWL_RenderLoop(RWIN *window) {
     i_Update_Window(GetDC(GetActiveWindow()), window);
   }
 }
-void RWL_Draw_Rect(RWIN* window, uint16_t x, uint16_t y, uint16_t width, uint16_t height, COLORREF color) {
-  RECT rect;
-  SetRect(&rect, x, y, x+width, y+height);
-  HBRUSH hBrush = CreateSolidBrush(color);
-  SelectObject(window->offscreenDC, hBrush);
-  FillRect(window->offscreenDC, &rect, hBrush);
-  DeleteObject(hBrush);
-}
 
 // set user defined function to the one being called in RWL_RenderLoop
 void RWL_Set_RenderFunc(RWIN *window, UserRenderFunc renderFunc, uint8_t numArgs, ...) {

@@ -67,5 +67,5 @@ int hi_create_height(enum RESOLUTION resolution);
 
 void i_Init_Offscreen_Buffer(HWND hWnd, RWIN* window);
 
-void RWL_Draw_Rect(RWIN* window, uint16_t x, uint16_t y, uint16_t width, uint16_t height, COLORREF color);
+
 

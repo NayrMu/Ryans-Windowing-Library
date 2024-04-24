@@ -187,4 +187,5 @@ src/CMakeFiles/WinWrap.dir/main.c.obj: \
  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h \
  C:/msys64/ucrt64/include/stdint.h \
  C:/Users/rkmun/source/repos/WinWrap/src/Fbuff/fbuff.h \
- C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdbool.h
+ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdbool.h \
+ C:/Users/rkmun/source/repos/WinWrap/src/WWinds/draw.h

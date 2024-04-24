@@ -12,6 +12,12 @@
   "output": "src/WWinds/CMakeFiles/wwinds.dir/WWinds.c.obj"
 },
 {
+  "directory": "C:/Users/rkmun/source/repos/WinWrap/build/src/WWinds",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe  @CMakeFiles/wwinds.dir/includes_C.rsp -g -o CMakeFiles\\wwinds.dir\\draw.c.obj -c C:\\Users\\rkmun\\source\\repos\\WinWrap\\src\\WWinds\\draw.c",
+  "file": "C:/Users/rkmun/source/repos/WinWrap/src/WWinds/draw.c",
+  "output": "src/WWinds/CMakeFiles/wwinds.dir/draw.c.obj"
+},
+{
   "directory": "C:/Users/rkmun/source/repos/WinWrap/build/src/Fbuff",
   "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe  @CMakeFiles/fbuff.dir/includes_C.rsp -g -o CMakeFiles\\fbuff.dir\\fbuff.c.obj -c C:\\Users\\rkmun\\source\\repos\\WinWrap\\src\\Fbuff\\fbuff.c",
   "file": "C:/Users/rkmun/source/repos/WinWrap/src/Fbuff/fbuff.c",

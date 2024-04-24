@@ -5,6 +5,7 @@ src/CMakeFiles/WinWrap.dir/main.c.obj: C:/Users/rkmun/source/repos/WinWrap/src/m
   C:/Users/rkmun/source/repos/WinWrap/src/Fbuff/fbuff.h \
   C:/Users/rkmun/source/repos/WinWrap/src/Platform.h \
   C:/Users/rkmun/source/repos/WinWrap/src/WWinds/WWinds.h \
+  C:/Users/rkmun/source/repos/WinWrap/src/WWinds/draw.h \
   C:/Users/rkmun/source/repos/WinWrap/src/rerror.h \
   C:/msys64/ucrt64/include/_mingw.h \
   C:/msys64/ucrt64/include/_mingw_mac.h \
@@ -230,6 +231,8 @@ C:/Users/rkmun/source/repos/WinWrap/src/Platform.h:
 
 C:/msys64/ucrt64/include/_mingw_mac.h:
 
+C:/Users/rkmun/source/repos/WinWrap/src/WWinds/draw.h:
+
 C:/Users/rkmun/source/repos/WinWrap/src/Fbuff/fbuff.h:
 
 C:/msys64/ucrt64/include/apisetcconv.h:
@@ -350,9 +353,9 @@ C:/msys64/ucrt64/include/minwinbase.h:
 
 C:/msys64/ucrt64/include/namedpipeapi.h:
 
-C:/msys64/ucrt64/include/namespaceapi.h:
-
 C:/msys64/ucrt64/include/sec_api/stdlib_s.h:
+
+C:/msys64/ucrt64/include/namespaceapi.h:
 
 C:/msys64/ucrt64/include/processthreadsapi.h:
 

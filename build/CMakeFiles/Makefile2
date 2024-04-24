@@ -136,7 +136,7 @@ src/CMakeFiles/WinWrap.dir/all: src/Fbuff/CMakeFiles/fbuff.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/WinWrap.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rkmun\source\repos\WinWrap\build\CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rkmun\source\repos\WinWrap\build\CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/CMakeFiles/WinWrap.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rkmun\source\repos\WinWrap\build\CMakeFiles 0
 .PHONY : src/CMakeFiles/WinWrap.dir/rule
@@ -157,12 +157,12 @@ src/CMakeFiles/WinWrap.dir/clean:
 src/WWinds/CMakeFiles/wwinds.dir/all:
 	$(MAKE) $(MAKESILENT) -f src\WWinds\CMakeFiles\wwinds.dir\build.make src/WWinds/CMakeFiles/wwinds.dir/depend
 	$(MAKE) $(MAKESILENT) -f src\WWinds\CMakeFiles\wwinds.dir\build.make src/WWinds/CMakeFiles/wwinds.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\rkmun\source\repos\WinWrap\build\CMakeFiles --progress-num=5,6 "Built target wwinds"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\rkmun\source\repos\WinWrap\build\CMakeFiles --progress-num=5,6,7 "Built target wwinds"
 .PHONY : src/WWinds/CMakeFiles/wwinds.dir/all
 
 # Build rule for subdir invocation for target.
 src/WWinds/CMakeFiles/wwinds.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rkmun\source\repos\WinWrap\build\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rkmun\source\repos\WinWrap\build\CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/WWinds/CMakeFiles/wwinds.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rkmun\source\repos\WinWrap\build\CMakeFiles 0
 .PHONY : src/WWinds/CMakeFiles/wwinds.dir/rule
